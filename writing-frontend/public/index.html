@@ -1,65 +1,302 @@
-<!--
-=========================================================
-* Notus React - v1.1.0 based on Tailwind Starter Kit by Creative Tim
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/notus-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/notus-react/blob/main/LICENSE.md)
-
-* Tailwind Starter Kit Page: https://www.creative-tim.com/learning-lab/tailwind-starter-kit/presentation
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="%PUBLIC_URL%/apple-icon.png"
-    />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreatWritersHub | Expert Academic & IT Solutions</title>
+  <meta name="description" content="GreatWritersHub provides premier assignment help, professional web design, development, and IT consulting services." />
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .gradient-text {
+      background: linear-gradient(90deg, #007CF0, #00DFD8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes floatAnim {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    .float {
+      animation: floatAnim 6s ease-in-out infinite;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00DFD8;
+      border-radius: 100px;
+    }
+    body {
+      scrollbar-width: thin;
+      scrollbar-color: #00DFD8 transparent;
+    }
+  </style>
+</head>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Notus React by Creative Tim | Free and Open Source UI Kit</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  </head>
-  <body class="text-blueGray-700 antialiased">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<body class="bg-gray-50 font-sans text-gray-900">
+  <!-- Header & Navbar -->
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <nav class="container mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" aria-label="Homepage" class="text-3xl font-extrabold gradient-text select-none">GreatWritersHub</a>
+      <ul class="hidden md:flex space-x-10 font-semibold text-gray-700">
+        <li><a href="services.html" class="hover:text-cyan-500 transition">Services</a></li>
+        <li><a href="process.html" class="hover:text-cyan-500 transition">How it Works</a></li>
+        <li><a href="reviews.html" class="hover:text-cyan-500 transition">Reviews</a></li>
+        <li><a href="contact.html" class="hover:text-cyan-500 transition">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="hidden md:inline-block px-6 py-3 rounded-full bg-cyan-500 text-white font-bold transition hover:bg-cyan-600 shadow-lg">Get Help Now</a>
+      <button id="navToggle" aria-label="Toggle menu" class="md:hidden focus:outline-none">
+        <i class="fas fa-bars text-2xl text-gray-700"></i>
+      </button>
+    </nav>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden bg-white shadow-md md:hidden">
+      <ul class="flex flex-col space-y-3 font-semibold p-6 text-gray-700">
+        <li><a href="services.html" class="block hover:text-cyan-500 transition">Services</a></li>
+        <li><a href="process.html" class="block hover:text-cyan-500 transition">How it Works</a></li>
+        <li><a href="reviews.html" class="block hover:text-cyan-500 transition">Reviews</a></li>
+        <li><a href="contact.html" class="block hover:text-cyan-500 transition">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-cyan-600 to-blue-600 text-white pt-40 pb-32 overflow-hidden">
+    <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start space-y-12 md:space-y-0 md:space-x-20 px-6">
+      <div class="md:w-1/2 max-w-lg">
+        <h1 class="text-5xl font-extrabold leading-tight mb-6">
+          Unlock Your Success with <span class="gradient-text">GreatWritersHub</span>
+        </h1>
+        <p class="text-lg leading-relaxed mb-8 opacity-90">
+          Professional assignment help, world-class web design, development services, and IT consulting tailored to your needs. Reliable and timely with expert support.
+        </p>
+        <div class="flex space-x-6">
+          <a href="contact.html" class="bg-white text-cyan-600 font-bold px-8 py-4 rounded-full shadow hover:shadow-xl transition transform hover:-translate-y-1">Order Now</a>
+          <a href="services.html" class="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-cyan-600 transition">Explore Services</a>
+        </div>
+      </div>
+      <div class="md:w-1/2 relative">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" alt="Student working on assignment" class="rounded-3xl shadow-2xl float max-w-full" />
+        <!-- Floating badges -->
+        <div class="absolute bottom-0 right-0 flex flex-col space-y-4 bg-white bg-opacity-30 backdrop-blur-md rounded-2xl p-6 shadow-xl max-w-xs translate-x-12 translate-y-12 border border-white">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-user-graduate text-cyan-600 text-3xl"></i>
+            <p class="font-semibold text-cyan-700">10,000+ Students Helped</p>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-clock text-cyan-600 text-3xl"></i>
+            <p class="font-semibold text-cyan-700">24/7 Customer Support</p>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-check-circle text-cyan-600 text-3xl"></i>
+            <p class="font-semibold text-cyan-700">100% Plagiarism-Free Work</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Decorative SVG wave -->
+    <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="#ffffff" d="M0 80C144 120 336 50 540 60 744 70 912 90 1080 70 1248 50 1344 90 1440 100V120H0V80Z"></path>
+    </svg>
+  </section>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <!-- Services Section -->
+  <section id="services" class="py-24 container mx-auto px-6 max-w-7xl">
+  <h2 class="text-center text-4xl font-extrabold text-gray-900 mb-16 gradient-text">Our Expert Services</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+    <!-- Service Card Template -->
+    <div class="group perspective">
+      <div
+        class="relative bg-white rounded-3xl shadow-2xl p-10 text-center cursor-pointer transform transition-transform duration-500 group-hover:rotate-y-6 group-hover:scale-105"
+        style="transform-style: preserve-3d;"
+      >
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-cyan-400 to-blue-500 opacity-30 blur-2xl -z-10 transition-opacity duration-500 group-hover:opacity-100"></div>
+        <div class="inline-block p-5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 mb-8 text-white shadow-lg transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+          <i class="fas fa-pen-nib text-5xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 mb-4">Essay Writing</h3>
+        <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+          Custom, well-researched essays tailored to your academic needs and style.
+        </p>
+      </div>
+    </div>
+
+    <div class="group perspective">
+      <div
+        class="relative bg-white rounded-3xl shadow-2xl p-10 text-center cursor-pointer transform transition-transform duration-500 group-hover:rotate-y-6 group-hover:scale-105"
+        style="transform-style: preserve-3d;"
+      >
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-cyan-400 to-blue-500 opacity-30 blur-2xl -z-10 transition-opacity duration-500 group-hover:opacity-100"></div>
+        <div class="inline-block p-5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 mb-8 text-white shadow-lg transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+          <i class="fas fa-file-alt text-5xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 mb-4">Research Papers</h3>
+        <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+          Thorough academic research and analysis done by expert writers in your field.
+        </p>
+      </div>
+    </div>
+
+    <div class="group perspective">
+      <div
+        class="relative bg-white rounded-3xl shadow-2xl p-10 text-center cursor-pointer transform transition-transform duration-500 group-hover:rotate-y-6 group-hover:scale-105"
+        style="transform-style: preserve-3d;"
+      >
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-cyan-400 to-blue-500 opacity-30 blur-2xl -z-10 transition-opacity duration-500 group-hover:opacity-100"></div>
+        <div class="inline-block p-5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 mb-8 text-white shadow-lg transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+          <i class="fas fa-graduation-cap text-5xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 mb-4">Dissertation Support</h3>
+        <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+          Complete guidance for dissertations, from research to final defense.
+        </p>
+      </div>
+    </div>
+
+    <div class="group perspective">
+      <div
+        class="relative bg-white rounded-3xl shadow-2xl p-10 text-center cursor-pointer transform transition-transform duration-500 group-hover:rotate-y-6 group-hover:scale-105"
+        style="transform-style: preserve-3d;"
+      >
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-cyan-400 to-blue-500 opacity-30 blur-2xl -z-10 transition-opacity duration-500 group-hover:opacity-100"></div>
+        <div class="inline-block p-5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 mb-8 text-white shadow-lg transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+          <i class="fas fa-laptop-code text-5xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 mb-4">Web Design & Development</h3>
+        <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+          Custom, modern website creation to boost your personal or business brand.
+        </p>
+      </div>
+    </div>
+
+    <div class="group perspective">
+      <div
+        class="relative bg-white rounded-3xl shadow-2xl p-10 text-center cursor-pointer transform transition-transform duration-500 group-hover:rotate-y-6 group-hover:scale-105"
+        style="transform-style: preserve-3d;"
+      >
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-cyan-400 to-blue-500 opacity-30 blur-2xl -z-10 transition-opacity duration-500 group-hover:opacity-100"></div>
+        <div class="inline-block p-5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 mb-8 text-white shadow-lg transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+          <i class="fas fa-headset text-5xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 mb-4">IT Consultation</h3>
+        <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+          Tailored tech solutions and expert consulting for businesses and individuals.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* 3D perspective container */
+  .perspective {
+    perspective: 1000px;
+  }
+  /* Rotate Y effect comes from Tailwind's utilities, enhanced below */
+  .group-hover\:rotate-y-6:hover {
+    transform: rotateY(6deg) translateZ(30px);
+  }
+</style>
+
+
+  <!-- Workflow Section -->
+  <section id="process" class="bg-cyan-50 py-24">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold mb-16 gradient-text">Our Process Made Simple</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-14">
+        <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition duration-300">
+          <div class="text-cyan-600 text-6xl font-bold mb-6">1</div>
+          <h3 class="text-2xl font-semibold mb-4">Place Your Order</h3>
+          <p class="text-gray-700">Fill our streamlined order form with your project details and deadline.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition duration-300">
+          <div class="text-cyan-600 text-6xl font-bold mb-6">2</div>
+          <h3 class="text-2xl font-semibold mb-4">Assigned Expert</h3>
+          <p class="text-gray-700">We'll match you with a specialist tailored to your specific subject and requirements.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition duration-300">
+          <div class="text-cyan-600 text-6xl font-bold mb-6">3</div>
+          <h3 class="text-2xl font-semibold mb-4">Receive Your Work</h3>
+          <p class="text-gray-700">Your completed, plagiarism-free work will be delivered on time for your review and success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="reviews" class="container mx-auto py-24 max-w-7xl px-6">
+    <h2 class="text-center text-4xl font-extrabold mb-14 gradient-text">Testimonials</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <figure class="bg-white shadow-xl rounded-3xl p-10 hover:shadow-2xl duration-300">
+        <blockquote class="italic mb-6">“GreatWritersHub took the stress away. My essay was delivered early and was exceptional.”</blockquote>
+        <figcaption class="flex items-center space-x-4">
+          <img class="w-14 h-14 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emily S" />
+          <div>
+            <div class="text-lg font-semibold">Emily S.</div>
+            <div class="text-cyan-600 text-sm">Undergraduate Student</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="bg-white shadow-xl rounded-3xl p-10 hover:shadow-2xl duration-300">
+        <blockquote class="italic mb-6">“Exceptional dissertation support helped me finish with confidence and top grades.”</blockquote>
+        <figcaption class="flex items-center space-x-4">
+          <img class="w-14 h-14 rounded-full object-cover" src="https://randomuser.me/api/portraits/men/26.jpg" alt="James T" />
+          <div>
+            <div class="text-lg font-semibold">James T.</div>
+            <div class="text-cyan-600 text-sm">Graduate Student</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="bg-white shadow-xl rounded-3xl p-10 hover:shadow-2xl duration-300">
+        <blockquote class="italic mb-6">“The support team was responsive 24/7 and the work quality exceeded my expectations.”</blockquote>
+        <figcaption class="flex items-center space-x-4">
+          <img class="w-14 h-14 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/55.jpg" alt="Sophia L" />
+          <div>
+            <div class="text-lg font-semibold">Sophia L.</div>
+            <div class="text-cyan-600 text-sm">College Student</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container mx-auto px-6 py-28 max-w-xl">
+    <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Reach Out to GreatWritersHub</h2>
+    <form class="bg-white p-10 rounded-3xl shadow-xl space-y-7 max-w-xl mx-auto" action="#" method="POST" novalidate>
+      <div>
+        <label for="name" class="block mb-3 font-semibold text-gray-800">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-600" />
+      </div>
+      <div>
+        <label for="email" class="block mb-3 font-semibold text-gray-800">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-600" />
+      </div>
+      <div>
+        <label for="message" class="block mb-3 font-semibold text-gray-800">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="How can we assist you?" required class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-600"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-700 transition text-white font-bold py-4 rounded-3xl shadow-lg hover:shadow-2xl">
+        Send Message
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-10 text-center text-gray-400">
+    <p>&copy; 2025 GreatWritersHub. All rights reserved.</p>
+  </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
 </html>
